@@ -1,0 +1,74 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Зерно — обжарка кофе</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&family=Unbounded:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0F3A2C;--dk:#0A2A20;--fg:#E8F4EC;--ac:#F4C542;--mu:#9FC0AD;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:90px}*{box-sizing:inherit;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 clamp(1rem,1.4vw,1.2rem)/1.6 Manrope,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.u,h1,h2,h3{font-family:Unbounded,sans-serif}
+.px{padding-inline:clamp(20px,5vw,72px)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;justify-content:space-between;align-items:center;padding-block:16px;background:rgba(15,58,44,.8);backdrop-filter:blur(10px)}
+nav b{font:800 1.3rem Unbounded}nav div{display:flex;gap:clamp(14px,3vw,36px);font-weight:600}
+.hero{min-height:calc(100svh - 70px);display:flex;flex-direction:column;justify-content:center;gap:28px;position:relative;overflow:hidden}
+h1{font-weight:800;font-size:clamp(4rem,19vw,24rem);line-height:.9;color:var(--ac);letter-spacing:-.04em}
+h1 span{display:inline-block;animation:r 1s cubic-bezier(.2,.8,.2,1) backwards}
+h1 span:nth-child(2){animation-delay:.08s}h1 span:nth-child(3){animation-delay:.16s}h1 span:nth-child(4){animation-delay:.24s}h1 span:nth-child(5){animation-delay:.32s}
+@keyframes r{from{transform:translateY(110%) rotate(8deg);opacity:0}}
+.hero p{font-size:clamp(1.2rem,2.6vw,2.2rem);max-width:24ch;line-height:1.25}
+.btn{display:inline-block;align-self:flex-start;background:var(--ac);color:var(--dk);font:800 clamp(1rem,1.6vw,1.3rem) Unbounded;padding:20px 44px;border-radius:99px;border:0;cursor:pointer}
+.bn{position:absolute;width:clamp(90px,16vw,260px);aspect-ratio:1.5;border-radius:50%;background:var(--ac);z-index:-1}
+.bn:after{content:"";position:absolute;left:8%;right:8%;top:48%;height:4%;background:var(--bg);border-radius:9px}
+.mq{background:var(--ac);color:var(--dk);overflow:hidden;white-space:nowrap;padding:20px 0;font:800 clamp(1.2rem,3vw,2.4rem) Unbounded}
+.mq div{display:inline-block;animation:m 28s linear infinite}.mq span{margin-inline:28px}
+@keyframes m{to{transform:translateX(-50%)}}
+section{padding-block:clamp(72px,12vw,160px)}
+h2{font-weight:800;font-size:clamp(2rem,6vw,5.5rem);line-height:1.05;margin-bottom:clamp(32px,5vw,72px);max-width:16ch}
+.ro{display:grid;gap:12px 40px;padding-block:clamp(28px,4vw,56px);border-top:2px solid rgba(232,244,236,.2);align-items:center}
+@media(min-width:900px){.ro{grid-template-columns:1.2fr 1.5fr auto}}
+.ro h3{font-weight:800;font-size:clamp(1.8rem,4vw,3.4rem)}.ro p{color:var(--mu)}
+.pk{font:800 1.3rem Unbounded;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.pk a{border:2px solid var(--ac);color:var(--ac);border-radius:99px;padding:12px 26px;font-size:1rem}.pk a:hover{background:var(--ac);color:var(--dk)}
+.st{background:var(--ac);color:var(--dk)}
+.st p{font:500 clamp(1.6rem,4.6vw,4.4rem)/1.18 Unbounded;max-width:22ch}
+.od{display:grid;gap:48px}@media(min-width:900px){.od{grid-template-columns:1fr 1fr;align-items:center}}
+.fm{background:var(--dk);border-radius:36px;padding:clamp(24px,4vw,48px)}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+label{cursor:pointer}input[type=radio]{position:absolute;opacity:0}
+label span{display:block;padding:14px 22px;border-radius:99px;border:2px solid var(--mu);font-weight:600}
+input:checked+span{background:var(--ac);color:var(--dk);border-color:var(--ac)}input:focus-visible+span{outline:3px solid #fff;outline-offset:2px}
+.qty{display:flex;align-items:center;gap:16px;margin-bottom:28px;font-size:1.2rem}
+.qty button{width:52px;height:52px;border-radius:50%;border:2px solid var(--mu);background:none;color:var(--fg);font-size:26px;cursor:pointer}
+.fm .btn{width:100%;text-align:center}#msg{margin-top:18px;color:var(--ac);min-height:1.6em}
+.rv{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+blockquote{background:var(--dk);border-radius:32px;padding:32px;font:500 clamp(1.1rem,1.8vw,1.5rem)/1.4 Unbounded}
+blockquote cite{display:block;margin-top:20px;font:400 1rem Manrope;color:var(--mu)}
+footer{background:var(--dk);padding-block:64px;color:var(--mu)}footer b{display:block;color:var(--ac);font:800 clamp(1.6rem,5vw,4rem)/1.1 Unbounded;margin-bottom:16px}
+@media(prefers-reduced-motion:reduce){h1 span{animation:none}.mq div{animation:none}html{scroll-behavior:auto}}
+</style></head><body>
+<nav class="px"><b>Зерно</b><div><a href="#roasts">Сорта</a><a href="#order">Заказ</a><a href="#reviews">Отзывы</a></div></nav>
+<header class="hero px"><i class="bn" style="right:6%;top:12%;transform:rotate(-24deg)"></i><i class="bn" style="right:22%;bottom:10%;transform:rotate(18deg);background:#C98A2B"></i><i class="bn" style="right:-3%;bottom:32%;transform:rotate(-8deg);background:#7A4A1E"></i>
+<h1 aria-label="Зерно"><span>З</span><span>Е</span><span>Р</span><span>Н</span><span>О</span></h1>
+<p>Обжариваем кофе каждое утро. К обеду он уже у вас.</p><a class="btn" href="#order">Собрать заказ</a></header>
+<div class="mq" aria-hidden="true"><div><span>Эфиопия</span><span>Колумбия</span><span>Кения</span><span>Бразилия</span><span>Гватемала</span><span>Эфиопия</span><span>Колумбия</span><span>Кения</span><span>Бразилия</span><span>Гватемала</span></div></div>
+<section id="roasts" class="px"><h2>Три обжарки на любой вкус</h2>
+<article class="ro"><div><h3>Светлая</h3><p>Эфиопия, мытая обработка</p></div><p>Жасмин, бергамот и персик. Яркая, лёгкая, почти чайная. Для фильтра и воронки.</p><div class="pk">690 ₽<a href="#order" data-v="690">Выбрать</a></div></article>
+<article class="ro"><div><h3>Средняя</h3><p>Колумбия, Уила</p></div><p>Карамель, фундук и красное яблоко. Сбалансированная, подойдёт для любой кофемашины.</p><div class="pk">650 ₽<a href="#order" data-v="650">Выбрать</a></div></article>
+<article class="ro"><div><h3>Тёмная</h3><p>Бразилия, Серрадо</p></div><p>Горький шоколад, орех и пряности. Плотная и густая, идеальна для эспрессо с молоком.</p><div class="pk">620 ₽<a href="#order" data-v="620">Выбрать</a></div></article></section>
+<section class="st px"><p>Зелёные зёрна едут напрямую от фермеров. Мы обжариваем маленькими партиями, пробуем каждую и пакуем в тот же день.</p></section>
+<section id="order" class="px"><div class="od"><h2 style="margin:0">Соберите свой заказ</h2><div class="fm">
+<div class="row" role="radiogroup" aria-label="Обжарка"><label><input type="radio" name="r" value="690" checked><span>Светлая</span></label><label><input type="radio" name="r" value="650"><span>Средняя</span></label><label><input type="radio" name="r" value="620"><span>Тёмная</span></label></div>
+<div class="qty"><button id="m" aria-label="Меньше">−</button><b id="q">1</b><button id="p" aria-label="Больше">+</button><span>пачек по 250 г</span></div>
+<button class="btn" id="go">Оформить заказ: 690 ₽</button><p id="msg" aria-live="polite"></p></div></div></section>
+<section id="reviews" class="px" style="padding-top:0"><h2>Нас любят соседи</h2><div class="rv">
+<blockquote>Наконец-то кофе, который пахнет кофе, а не пережжённой корочкой.<cite>Анна, дизайнер</cite></blockquote>
+<blockquote>Заказал утром, к обеду курьер уже стоял под дверью. Зёрна ещё тёплые.<cite>Игорь, разработчик</cite></blockquote>
+<blockquote>Взяли светлую обжарку в офис. Теперь команда спорит, чья очередь заказывать.<cite>Мария, руководитель отдела</cite></blockquote></div></section>
+<footer class="px"><b>Ленина, 12</b>Ежедневно с 8:00 до 20:00. Демо-сайт, сделан Николаем.</footer>
+<script>
+const $=s=>document.querySelector(s);let n=1;
+function upd(){const r=+document.querySelector('input:checked').value;$('#q').textContent=n;$('#go').textContent='Оформить заказ: '+(r*n).toLocaleString('ru-RU')+' ₽'}
+$('#m').onclick=()=>{n=Math.max(1,n-1);upd()};$('#p').onclick=()=>{n=Math.min(20,n+1);upd()};
+document.querySelectorAll('input').forEach(i=>i.onchange=upd);
+document.querySelectorAll('[data-v]').forEach(a=>a.onclick=()=>{document.querySelector('input[value="'+a.dataset.v+'"]').checked=true;upd()});
+$('#go').onclick=()=>{$('#msg').textContent='Заказ принят. Позвоним в течение часа, чтобы уточнить доставку.'};
+</script></body></html>

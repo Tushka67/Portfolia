@@ -1,0 +1,101 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Николай — сайты и Telegram-боты</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0C0C0C;--tx:#D7E2EA;--ink:#0C0C0C;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{background:var(--bg);scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:inherit;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:Rubik,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit;text-decoration:none}
+.g{background:linear-gradient(180deg,#646973 0%,#BBCCD7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.h{font-weight:900;text-transform:uppercase;line-height:1;letter-spacing:-.02em;text-align:center;font-size:clamp(2.6rem,11vw,140px)}
+.btn{display:inline-block;border-radius:99px;padding:clamp(18px,2.2vw,30px) clamp(34px,5.5vw,80px);color:#fff;font-weight:500;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(1rem,1.9vw,1.7rem);background:linear-gradient(123deg,#18011F 7%,#B600A8 37%,#7621B0 72%,#BE4C00 100%);box-shadow:0 4px 4px rgba(181,1,167,.25),4px 4px 12px #7721B1 inset;outline:2px solid #fff;outline-offset:-3px}
+a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.hero{height:100vh;min-height:620px;display:flex;flex-direction:column;padding:0 24px;position:relative}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:clamp(6px,1.2vw,12px);padding-top:22px}
+nav a{padding:11px clamp(14px,2.4vw,28px);border-radius:99px;border:1px solid #2b2f36;background:rgba(255,255,255,.05);font-weight:500;font-size:clamp(.85rem,1.3vw,1.05rem);transition:background .2s}
+nav a:hover{background:rgba(215,226,234,.16)}
+.hero h1{font-size:clamp(3rem,13.4vw,230px);white-space:nowrap;margin-top:3vh;text-align:left;width:100%}
+.orb{position:absolute;left:50%;bottom:0;transform:translateX(-50%);z-index:1;width:min(70vw,440px)}
+#mag{aspect-ratio:1;border-radius:50% 50% 0 0/60% 60% 0 0;background:radial-gradient(circle at 35% 30%,#BBCCD7,#646973 45%,#1b1d22 80%);display:grid;place-items:center;font-weight:900;font-size:min(36vw,230px);color:#0C0C0C;will-change:transform}
+.bar{margin-top:auto;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;padding-bottom:34px;position:relative;z-index:2}
+.bar p{font-weight:300;text-transform:uppercase;letter-spacing:.04em;max-width:240px;font-size:clamp(.75rem,1.4vw,1.2rem)}
+.in{opacity:0;animation:up .8s cubic-bezier(.25,.1,.25,1) forwards}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.mq{padding:90px 0 40px;display:grid;gap:12px;overflow:hidden}
+.row{display:flex;gap:12px;width:max-content;will-change:transform}
+.row span{border:1px solid #2b2f36;border-radius:24px;padding:28px 44px;font-size:clamp(1.4rem,3vw,2.4rem);font-weight:500;white-space:nowrap}
+.ab{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;padding:80px 24px;text-align:center}
+#t{max-width:1040px;font-weight:500;line-height:1.35;font-size:clamp(1.5rem,3.7vw,3.3rem)}
+#t .w{display:inline-block;white-space:pre}
+.sv{background:#fff;color:var(--ink);border-radius:48px 48px 0 0;padding:96px 24px 120px}
+.sv .h{color:var(--ink);margin-bottom:72px}
+.it{max-width:1000px;margin:0 auto;display:flex;gap:clamp(16px,4vw,48px);padding:36px 0;border-top:1px solid rgba(12,12,12,.15)}
+.it>b{font-weight:900;font-size:clamp(2.6rem,9vw,120px);line-height:1}
+.it h3{font-weight:500;text-transform:uppercase;font-size:clamp(1rem,2.2vw,2rem);margin-bottom:8px}
+.it p{font-weight:300;opacity:.65;max-width:640px;line-height:1.6;font-size:clamp(.9rem,1.6vw,1.2rem)}
+.pr{background:var(--bg);border-radius:48px 48px 0 0;margin-top:-40px;position:relative;z-index:10;padding:96px 16px 40px}
+.pr .h{margin-bottom:48px}
+.ss{padding-inline:clamp(0px,2%,24px)}
+.ss-slot{position:sticky;max-width:1100px;width:100%;margin:0 auto}
+.card{position:relative;border:2px solid var(--tx);border-radius:48px;background:var(--bg);padding:clamp(18px,3vw,32px);transform-origin:50% 0;will-change:transform}
+.sh{position:absolute;inset:0;border-radius:inherit;background:#000;opacity:var(--dim,0);pointer-events:none}
+.card h3{font-weight:900;font-size:clamp(1.6rem,4vw,3.4rem);margin:4px 0}
+.card .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.card .top p{font-weight:300;max-width:46ch;opacity:.8;line-height:1.5}
+.ghost{border:2px solid var(--tx);border-radius:99px;padding:12px 32px;text-transform:uppercase;letter-spacing:.1em;font-weight:500}
+.ghost:hover{background:rgba(215,226,234,.1)}
+.pv{display:flex;flex-direction:column;height:clamp(250px,34vw,430px);border-radius:32px;overflow:hidden;border:1px solid #2b2f36}
+.bb{display:flex;gap:8px;padding:14px 18px;background:rgba(0,0,0,.18)}
+.bb i{width:12px;height:12px;border-radius:50%;background:rgba(128,128,128,.6)}
+.pb{flex:1;display:flex;flex-wrap:wrap;gap:20px 40px;align-items:center;padding:clamp(18px,3vw,44px)}
+.pb b{font-weight:900;font-size:clamp(1.4rem,4.2vw,3.5rem);line-height:1.1;max-width:14ch;flex:1 1 260px}
+.ch{display:flex;gap:10px;flex-wrap:wrap;flex:1 1 260px}
+.ch span{border:2px solid #9DBBA9;color:#E6F2EA;border-radius:99px;padding:8px 18px;font-size:clamp(.75rem,1.4vw,1rem)}
+.bu{display:grid;gap:8px;flex:1 1 260px}
+.bu span{background:#fff;color:#0E1B2C;border-radius:16px;padding:9px 14px;max-width:90%;font-size:clamp(.75rem,1.4vw,1rem)}
+.bu .me{background:#D9F1FF;justify-self:end}
+.ct{text-align:center;padding:120px 24px 100px;display:grid;gap:40px;justify-items:center;background:var(--bg)}
+.ct p{max-width:480px;font-weight:300;font-size:1.15rem}
+.ct .h{font-size:clamp(2.2rem,7.2vw,104px);max-width:1100px;text-wrap:balance}
+.h{text-wrap:balance}
+@media(prefers-reduced-motion:reduce){.in{animation:none;opacity:1}html{scroll-behavior:auto}}
+</style></head><body>
+<header class="hero">
+<nav class="in"><a href="#about">Обо мне</a><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#contact">Контакты</a></nav>
+<h1 class="g in" style="animation-delay:.15s">Я Николай</h1>
+<div class="orb in" style="animation-delay:.6s"><div id="mag" aria-hidden="true">Н</div></div>
+<div class="bar"><p class="in" style="animation-delay:.35s">Делаю сайты и Telegram-ботов, на которые хочется смотреть и которые приносят заявки</p><a class="btn tg in" style="animation-delay:.5s" href="#contact">Написать мне</a></div>
+</header>
+<div class="mq" aria-hidden="true"><div class="row" id="r1"></div><div class="row" id="r2"></div></div>
+<section class="ab" id="about"><h2 class="h g">Обо мне</h2><p id="t" data-t="Я дофига крутой. Серьёзно: делаю сайты, веб-приложения и Telegram-ботов быстро, а выглядят они так, будто над ними неделями сидела целая студия. Беру всё на себя: от идеи до запуска, а вы занимаетесь бизнесом. Давайте сделаем что-то неприлично хорошее!"></p><a class="btn tg" href="#contact">Связаться</a></section>
+<section class="sv" id="services"><h2 class="h">Услуги</h2>
+<div class="it"><b>01</b><div><h3>Сайты и лендинги</h3><p>Современные страницы, которые быстро грузятся, хорошо выглядят на телефоне и ведут посетителя к заявке.</p></div></div>
+<div class="it"><b>02</b><div><h3>Веб-приложения</h3><p>Личные кабинеты, калькуляторы, админки и сервисы под вашу задачу, а не по шаблону.</p></div></div>
+<div class="it"><b>03</b><div><h3>Telegram-боты</h3><p>Запись клиентов, приём заказов, рассылки и поддержка: бот работает, пока вы занимаетесь делом.</p></div></div>
+<div class="it"><b>04</b><div><h3>Автоматизация</h3><p>Связываю формы, таблицы, оплату и уведомления, чтобы рутина выполнялась сама.</p></div></div>
+<div class="it"><b>05</b><div><h3>Доработка и поддержка</h3><p>Исправлю, ускорю и обновлю уже существующий сайт или бота. Быстрые правки без драмы.</p></div></div></section>
+<section class="pr" id="projects"><h2 class="h g">Проекты</h2><div class="ss" id="ss">
+<div class="ss-slot"><article class="card"><div class="top"><div><small>Сайт для бизнеса</small><h3>Зерно</h3><p>Лендинг обжарочной с конструктором заказа: выбор обжарки, количество и мгновенный расчёт цены.</p></div><a class="ghost" href="zerno.html" target="_blank" rel="noopener">Открыть сайт</a></div><a class="pv" href="zerno.html" target="_blank" rel="noopener" aria-label="Открыть сайт Зерно" style="background:#10382B"><div class="bb"><i></i><i></i><i></i></div><div class="pb"><b style="color:#E6F2EA">Кофе, обжаренный сегодня утром</b><div class="ch"><span style="background:#F4C542;color:#10382B;border-color:#F4C542">Светлая · 690 ₽</span><span>Средняя · 650 ₽</span><span>Тёмная · 620 ₽</span></div></div></a><span class="sh" aria-hidden="true"></span></article></div>
+<div class="ss-slot"><article class="card"><div class="top"><div><small>Telegram-бот</small><h3>Запись24</h3><p>Сайт-витрина бота для записи клиентов: пример диалога, преимущества и понятный призыв к действию.</p></div><a class="ghost" href="bot.html" target="_blank" rel="noopener">Открыть сайт</a></div><a class="pv" href="bot.html" target="_blank" rel="noopener" aria-label="Открыть сайт Запись24" style="background:#F3F7FB"><div class="bb"><i></i><i></i><i></i></div><div class="pb"><b style="color:#0E1B2C">Бот записывает клиентов, пока вы работаете</b><div class="bu"><span>Выберите услугу: стрижка, борода или всё вместе.</span><span class="me">Стрижка</span><span>Свободно завтра: 11:00, 13:30, 17:00.</span><span class="me">13:30</span></div></div></a><span class="sh" aria-hidden="true"></span></article></div><div class="ss-end"></div></div>
+</section>
+<section class="ct" id="contact"><h2 class="h g">Ваш сайт — следующий</h2><p>Расскажите, что нужно, и я скажу, как это сделать и сколько это займёт.</p><a class="btn tg" href="#">Написать в Telegram</a></section>
+<script>
+const TG='https://t.me/kisseverywhere';
+document.querySelectorAll('.tg').forEach(a=>a.href=TG);
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches,$=s=>document.querySelector(s);
+const A=['Сайты','Лендинги','Telegram-боты','Веб-приложения','Автоматизация','Интернет-магазины','Чат-боты','Админки'],B=['Дизайн','Анимации','Быстрая загрузка','Адаптив','Заявки','Поддержка','Правки'];
+const fill=(r,a)=>r.innerHTML=[...a,...a,...a].map(x=>'<span>'+x+'</span>').join('');
+fill($('#r1'),A);fill($('#r2'),B);
+const t=$('#t'),T=t.dataset.t,cs=[];
+T.split(' ').forEach(w=>{const s=document.createElement('span');s.className='w';[...w+' '].forEach(c=>{const x=document.createElement('span');x.textContent=c;x.style.opacity=rm?1:.2;s.append(x);cs.push(x)});t.append(s)});
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),mq=$('.mq'),slots=[...document.querySelectorAll('.ss-slot')],ssEnd=$('.ss-end');
+const SS={dist:100,off:24,pos:.15,scale:.05,base:.8,dim:.2,hold:200};
+function setup(){const top=SS.pos*innerHeight,n=slots.length;ssEnd.style.height=SS.hold+'px';slots.forEach((s,i)=>{s.style.top=(top+i*SS.off)+'px';s.style.zIndex=i+1;s.style.marginBottom=(n-1-i)*SS.off+'px';if(i)s.style.marginTop=(SS.dist-(n-i)*SS.off)+'px'})}
+function stack(){const top=SS.pos*innerHeight,n=slots.length,H=slots.map(s=>s.offsetHeight),T=slots.map(s=>s.getBoundingClientRect().top),d=slots.map(()=>0);for(let j=1;j<n;j++){const pin=top+(j-1)*SS.off,st=pin+H[j-1],c=cl((st-T[j])/Math.max(1,st-pin-SS.off));for(let i=0;i<j;i++)d[i]+=c}slots.forEach((s,i)=>{const c=s.firstElementChild;c.style.transform=d[i]<.0005?'':'scale('+Math.max(SS.base,1-d[i]*SS.scale).toFixed(4)+')';c.style.setProperty('--dim',(1-Math.pow(1-SS.dim,d[i])).toFixed(3))})}
+function onS(){if(rm)return;const vh=innerHeight,off=(vh-mq.getBoundingClientRect().top)*.3;
+$('#r1').style.transform='translateX('+(off-300)+'px)';$('#r2').style.transform='translateX('+(-off-300)+'px)';
+const r=t.getBoundingClientRect(),p=cl((.8*vh-r.top)/(r.height+.6*vh));cs.forEach((c,i)=>c.style.opacity=.2+.8*cl(p*cs.length*1.1-i));
+stack()}
+addEventListener('scroll',onS,{passive:true});addEventListener('resize',()=>{setup();onS()});setup();onS();
+const m=$('#mag');if(!rm&&matchMedia('(hover:hover)').matches)addEventListener('mousemove',e=>{const r=m.getBoundingClientRect(),dx=e.clientX-(r.left+r.width/2),dy=e.clientY-(r.top+r.height/2),P=150,on=Math.abs(dx)<r.width/2+P&&Math.abs(dy)<r.height/2+P;m.style.transition=on?'transform .3s ease-out':'transform .6s ease-in-out';m.style.transform=on?'translate3d('+dx/3+'px,'+dy/3+'px,0)':'none'});
+</script></body></html>

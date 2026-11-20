@@ -1,0 +1,62 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Запись24 — Telegram-бот для записи клиентов</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F7FB;--fg:#0E1B2C;--ac:#229ED9;--card:#fff;--mu:#5B6B7F;--me:#D9F1FF;--dk:#0E1B2C;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root{--bg:#0B1520;--fg:#EAF2FA;--card:#13222F;--mu:#93A5B8;--me:#1B4A66;--dk:#050B12}}
+html{background:var(--bg);scroll-behavior:smooth}*{box-sizing:inherit;margin:0}
+body{background:var(--bg);color:var(--fg);font:400 clamp(1rem,1.4vw,1.2rem)/1.6 Manrope,system-ui,sans-serif;overflow-x:clip}
+a{color:inherit;text-decoration:none}a:focus-visible,summary:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.px{padding-inline:clamp(20px,5vw,72px);max-width:1280px;margin-inline:auto}
+nav{display:flex;justify-content:space-between;align-items:center;padding-block:20px;font-weight:800}
+.btn{display:inline-block;background:var(--ac);color:#fff;font-weight:800;font-size:clamp(1rem,1.6vw,1.25rem);padding:18px 40px;border-radius:99px}
+.btn.o{background:none;color:var(--fg);box-shadow:inset 0 0 0 2px var(--fg)}
+.hero{display:grid;gap:56px;align-items:center;min-height:calc(100svh - 80px);padding-block:32px}
+@media(min-width:900px){.hero{grid-template-columns:1.15fr .85fr}}
+h1{font:800 clamp(2.4rem,6.6vw,5.6rem)/1.02 Manrope;letter-spacing:-.03em;margin-bottom:24px}
+.l{color:var(--mu);font-size:clamp(1.1rem,1.8vw,1.5rem);max-width:34ch;margin-bottom:32px}
+.bs{display:flex;gap:14px;flex-wrap:wrap}
+.ph{background:var(--card);border-radius:44px;padding:22px;display:grid;gap:12px;box-shadow:0 30px 80px rgba(34,158,217,.28);max-width:420px;width:100%;justify-self:center}
+.ph b{display:flex;align-items:center;gap:10px}.ph b:before{content:"";width:38px;height:38px;border-radius:50%;background:var(--ac)}
+.m{max-width:85%;padding:12px 16px;border-radius:20px;background:var(--bg);opacity:0;animation:in .5s forwards}.m.me{background:var(--me);justify-self:end}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+section{padding-block:clamp(64px,10vw,140px)}
+h2{font:800 clamp(2rem,5vw,4.2rem)/1.06 Manrope;letter-spacing:-.02em;margin-bottom:clamp(28px,4vw,56px);max-width:18ch}
+.stp{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.stp div{background:var(--card);border-radius:32px;padding:32px}.stp i{font:800 3.4rem/1 Manrope;color:var(--ac);font-style:normal}
+h3{font-size:1.4rem;margin:12px 0 8px}.stp p,.fx p{color:var(--mu)}
+.fx{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}.fx div{border:2px solid var(--me);border-radius:28px;padding:28px}
+details{border-top:2px solid var(--me);padding-block:22px}details:last-child{border-bottom:2px solid var(--me)}
+summary{font-weight:800;font-size:clamp(1.1rem,2vw,1.5rem);cursor:pointer}details p{color:var(--mu);margin-top:12px;max-width:60ch}
+.cta{background:var(--dk);color:#fff;border-radius:48px;text-align:center;padding:clamp(48px,9vw,120px) 24px;margin-bottom:56px}
+.cta h2{margin-inline:auto;color:#fff}
+@media(prefers-reduced-motion:reduce){.m{animation:none;opacity:1}html{scroll-behavior:auto}}
+</style></head><body>
+<div class="px"><nav><span>Запись24</span><a href="#faq">Вопросы</a></nav>
+<header class="hero"><div><h1>Клиенты записываются сами. Вы просто работаете.</h1><p class="l">Telegram-бот принимает записи круглосуточно, не путает время и напоминает клиентам о визите.</p>
+<div class="bs"><a class="btn tg" href="#" target="_blank" rel="noopener">Попробовать бота</a><a class="btn o" href="#how">Как это работает</a></div></div>
+<div class="ph" aria-label="Пример переписки с ботом"><b>Запись24</b>
+<div class="m" style="animation-delay:.4s">Здравствуйте! Выберите услугу: стрижка, борода или и то и другое.</div>
+<div class="m me" style="animation-delay:1.6s">Стрижка</div>
+<div class="m" style="animation-delay:2.6s">Свободно завтра: 11:00, 13:30, 17:00.</div>
+<div class="m me" style="animation-delay:3.8s">13:30</div>
+<div class="m" style="animation-delay:4.8s">Готово, вы записаны на завтра в 13:30. Напомню за час.</div></div></header>
+<section id="how"><h2>Запись за три шага</h2><div class="stp">
+<div><i>1</i><h3>Клиент открывает бота</h3><p>По ссылке или QR-коду, без регистрации и приложений.</p></div>
+<div><i>2</i><h3>Выбирает время</h3><p>Бот показывает только свободные окна, двойных записей не бывает.</p></div>
+<div><i>3</i><h3>Вы получаете запись</h3><p>Уведомление приходит в Telegram, а клиенту за час до визита придёт напоминание.</p></div></div></section>
+<section><h2>Всё, что нужно мастеру</h2><div class="fx">
+<div><h3>Календарь без накладок</h3><p>Рабочие часы, перерывы и выходные настраиваются один раз.</p></div>
+<div><h3>Свои услуги и цены</h3><p>Длительность и стоимость каждой услуги учитываются при записи.</p></div>
+<div><h3>Напоминания</h3><p>Меньше неявок: клиент подтверждает визит или переносит его в один клик.</p></div>
+<div><h3>Управление в чате</h3><p>Расписание на день и отмена записи доступны прямо в Telegram.</p></div>
+<div><h3>Рассылки</h3><p>Сообщите о скидке или свободных окнах всем клиентам сразу.</p></div>
+<div><h3>База клиентов</h3><p>История визитов и контакты сохраняются автоматически.</p></div></div></section>
+<section id="faq"><h2>Частые вопросы</h2>
+<details><summary>Нужно ли клиентам что-то устанавливать?</summary><p>Нет. Достаточно Telegram, который у большинства уже есть.</p></details>
+<details><summary>Сколько времени занимает запуск?</summary><p>Простой бот готов за несколько дней, сложный с оплатой и рассылками обсуждается отдельно.</p></details>
+<details><summary>Можно ли изменить услуги и расписание позже?</summary><p>Да, всё меняется в настройках бота без обращения к разработчику.</p></details></section>
+<div class="cta"><h2>Попробуйте бота прямо сейчас</h2><a class="btn tg" href="#" target="_blank" rel="noopener">Попробовать бота</a></div></div>
+<script>
+const BOT='https://t.me/Zapis24_7_bot';
+document.querySelectorAll('.tg').forEach(a=>a.href=BOT);
+</script></body></html>
